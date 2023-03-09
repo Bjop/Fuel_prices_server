@@ -1,0 +1,17 @@
+{
+  "name": "fuelprices",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "node-mandrill": "^1.0.1",
+    "node-schedule": "file:node_modules/node-schedule",
+    "puppeteer": "^15.4.1"
+  }
+}
