@@ -23,8 +23,18 @@
     </body>
 </html>
 <script>
-let json
-$.getJSON("history.json", data => {
-    data.slice(0,10).each(k => $("tbody").prepend("<tr><td>" + k.date + "</td><td>" + k.price + "</td></tr>"))
-})
+$.ajax({
+    type: 'GET',
+    url: 'http://localhost:3000/prices',
+    crossDomain: true,
+    dataType: "json",
+    success: function(response){fillTable(response)}
+});
+
+const fillTable = (data) => {
+    const slice = data.slice(0,10)
+    slice.forEach(
+        element => $("tbody").prepend("<tr><td>" + element.date + "</td><td>" + element.price + "</td></tr>")
+    );
+}   
 </script>

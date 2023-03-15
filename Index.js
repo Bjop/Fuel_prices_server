@@ -2,7 +2,6 @@ const puppeteer = require("puppeteer")
 const fs = require('fs')
 let browser;
 
-schedule.scheduleJob('0 0 10 * * 1,2,3,4,5', () => {
 (async () => {
     const browser = await puppeteer.launch({headless:true})
     const [page] = await browser.pages()
@@ -37,4 +36,4 @@ schedule.scheduleJob('0 0 10 * * 1,2,3,4,5', () => {
   () => {browser?.close()
     process.exit()
   }
-)})
+)
