@@ -18,10 +18,10 @@ let browser;
     let date = await page.evaluate(el => el.textContent, edate)
 
     const o = {"date": date, "price": price}
-    let json = JSON.parse(fs.readFileSync("history.json"))
+    let json = JSON.parse(fs.readFileSync("./history.json"))
     json.unshift(o)
     json = JSON.stringify(json)
-    fs.writeFile("history.json", json, (err) => console.log(err))
+    fs.writeFile("./history.json", json, (err) => console.log(err))
 
   const data = await page.$$eval("tr", els =>
   els.slice(1).map(e => [...e.querySelectorAll("td")]
